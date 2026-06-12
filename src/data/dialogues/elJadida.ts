@@ -1,0 +1,188 @@
+import type { DialogueTree } from "@/types";
+
+export const EL_JADIDA_DIALOGUES: DialogueTree[] = [
+  {
+    id: "q-glass-of-milk-intro",
+    npcId: "mrs-fassi",
+    start: "n1",
+    nodes: {
+      n1: {
+        id: "n1",
+        speaker: "narrator",
+        text: "El Jadida. New city, new school, new director. Mrs. Fassi reviews Selma's file in eleven seconds, which staff say is a record for thoroughness at speed.",
+        next: "n2",
+      },
+      n2: {
+        id: "n2",
+        speaker: "mrs-fassi",
+        mood: "stern",
+        text: "Safi sends good reports about you. Reports are paper. Tomorrow you teach 2nd year: quantities and polite requests. 'Could I have a glass of milk, please?' Show me what the reports mean.",
+        next: "n3",
+      },
+      n3: {
+        id: "n3",
+        speaker: "selma",
+        mood: "neutral",
+        text: "Countable and uncountable nouns, some and any, polite requests. I'll build the lesson tonight — presentation, practice, production.",
+        next: "n4",
+      },
+      n4: {
+        id: "n4",
+        speaker: "mrs-fassi",
+        mood: "neutral",
+        text: "PPP. Classic. The order of your stages will make or break it. What comes first in your classroom, Miss Selma?",
+        choices: [
+          {
+            id: "c1",
+            text: "A warm-up — a café roleplay to set the scene.",
+            next: "n5",
+            effects: [{ stat: "teachingSkill", amount: 2 }],
+            relationshipDelta: 6,
+            decisionFlag: "milk-warmup-first",
+          },
+          {
+            id: "c2",
+            text: "The grammar rule on the board, so the foundation is clear.",
+            next: "n5b",
+            effects: [{ stat: "englishKnowledge", amount: 1 }],
+            relationshipDelta: 2,
+            decisionFlag: "milk-rule-first",
+          },
+        ],
+      },
+      n5: {
+        id: "n5",
+        speaker: "mrs-fassi",
+        mood: "proud",
+        text: "Context before rules. The reports may be right about you. Go and build that lesson — I will be passing by the window. I always am.",
+        next: null,
+      },
+      n5b: {
+        id: "n5b",
+        speaker: "mrs-fassi",
+        mood: "neutral",
+        text: "Hm. Rules first is safe — and a little dry. Children order milk before they can spell 'uncountable'. Think about it tonight. I will be passing by the window either way.",
+        next: null,
+      },
+    },
+  },
+  {
+    id: "q-glass-of-milk-outro",
+    npcId: "mrs-fassi",
+    start: "n1",
+    nodes: {
+      n1: {
+        id: "n1",
+        speaker: "narrator",
+        text: "By the end of the lesson, the classroom is a noisy café where every customer says please. A boy bows while ordering imaginary orange juice.",
+        next: "n2",
+      },
+      n2: {
+        id: "n2",
+        speaker: "mrs-fassi",
+        mood: "proud",
+        text: "I watched from the window. Twice. Your staging was clean and the children were ordering milk like little diplomats. Keep that lesson plan — you will reuse it for years.",
+        next: "n3",
+      },
+      n3: {
+        id: "n3",
+        speaker: "selma",
+        mood: "happy",
+        text: "It's strange — on paper it was boxes and arrows. In the room, it became... a place. I think I'm starting to love planning.",
+        next: null,
+      },
+    },
+  },
+  {
+    id: "q-weather-intro",
+    npcId: "amine",
+    start: "n1",
+    nodes: {
+      n1: {
+        id: "n1",
+        speaker: "narrator",
+        text: "Next on Selma's schedule: weather vocabulary with the 1st years. A small boy materializes at her desk before class with the gravity of a press conference.",
+        next: "n2",
+      },
+      n2: {
+        id: "n2",
+        speaker: "amine",
+        mood: "neutral",
+        text: "Miss. Important question. Can it rain AND be sunny at the same time? My cousin says no but I saw it. I SAW it.",
+        next: "n3",
+      },
+      n3: {
+        id: "n3",
+        speaker: "selma",
+        mood: "happy",
+        text: "It can! It's called a sunshower — and sometimes you even get a rainbow as a bonus. Your cousin owes you an apology.",
+        next: "n4",
+      },
+      n4: {
+        id: "n4",
+        speaker: "amine",
+        mood: "happy",
+        text: "I KNEW it. Miss, you are officially better than my cousin. Are we doing weather today? I have opinions about clouds.",
+        next: "n5",
+      },
+      n5: {
+        id: "n5",
+        speaker: "selma",
+        mood: "neutral",
+        text: "We are — and I need good examples that the whole class will feel, not just memorize. How should I anchor each word?",
+        choices: [
+          {
+            id: "c1",
+            text: "Tie each word to El Jadida itself — fog on the ramparts, wind at the port.",
+            next: "n6",
+            effects: [{ stat: "teachingSkill", amount: 2 }],
+            relationshipDelta: 6,
+            decisionFlag: "weather-local-examples",
+          },
+          {
+            id: "c2",
+            text: "Use a TV-style weather forecast game with a paper microphone.",
+            next: "n6",
+            effects: [{ stat: "classroomManagement", amount: 2 }],
+            relationshipDelta: 6,
+            decisionFlag: "weather-forecast-game",
+          },
+        ],
+      },
+      n6: {
+        id: "n6",
+        speaker: "amine",
+        mood: "happy",
+        text: "Can I go first? I want to do the weather for Casablanca. It is ALWAYS windy there. My uncle lives there and his hat agrees.",
+        next: null,
+      },
+    },
+  },
+  {
+    id: "q-weather-outro",
+    npcId: "amine",
+    start: "n1",
+    nodes: {
+      n1: {
+        id: "n1",
+        speaker: "narrator",
+        text: "The lesson ends with a full classroom weather report. Amine forecasts wind for Casablanca with 'one hundred percent certainty, because of my uncle's hat.'",
+        next: "n2",
+      },
+      n2: {
+        id: "n2",
+        speaker: "amine",
+        mood: "happy",
+        text: "Miss Selma, when you are a real teacher in Casablanca, tell my uncle hello. He is the one running after his hat.",
+        next: "n3",
+      },
+      n3: {
+        id: "n3",
+        speaker: "selma",
+        mood: "happy",
+        text: "Deal. And Amine? 'When you are a real teacher' — I'm going to remember you said that, on the day it comes true.",
+        next: null,
+      },
+    },
+  },
+];

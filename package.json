@@ -1,0 +1,32 @@
+{
+  "name": "selmas-teaching-journey",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A wholesome educational RPG about Selma's journey from CRMEF trainee in Safi to certified English teacher in Casablanca.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx scripts/world.test.ts && tsx scripts/playthrough.test.ts && tsx scripts/routes.test.ts"
+  },
+  "dependencies": {
+    "framer-motion": "^11.18.2",
+    "next": "^15.3.3",
+    "phaser": "^3.90.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "three": "^0.184.0",
+    "zustand": "^5.0.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.8",
+    "@types/node": "^22.15.29",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.5",
+    "@types/three": "^0.184.1",
+    "tailwindcss": "^4.1.8",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}

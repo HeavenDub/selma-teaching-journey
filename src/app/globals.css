@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sand-50: #fdf9f0;
+  --color-sand-100: #faf3e2;
+  --color-sand-200: #f3e6c8;
+  --color-sand-300: #e9d4a7;
+  --color-sand-400: #ddbe82;
+  --color-sand-500: #cfa55e;
+  --color-sand-600: #b3853f;
+  --color-sand-700: #8f6730;
+  --color-sand-800: #6b4c26;
+  --color-sand-900: #4a341c;
+
+  --color-terra-300: #f4a261;
+  --color-terra-500: #e76f51;
+  --color-terra-700: #c1452a;
+
+  --color-zellige-300: #7fc8bd;
+  --color-zellige-500: #2a9d8f;
+  --color-zellige-700: #1d6e64;
+
+  --color-majorelle-300: #8e9fd4;
+  --color-majorelle-500: #4d5fa8;
+  --color-majorelle-700: #364377;
+
+  --color-ink: #3a2f24;
+  --color-ink-soft: #6b5d4b;
+
+  --color-gold-300: #f0d488;
+  --color-gold-500: #e9c46a;
+  --color-gold-700: #c79b35;
+
+  --font-display: var(--font-display), "Georgia", serif;
+  --font-body: var(--font-body), "Segoe UI", sans-serif;
+
+  --shadow-cozy: 0 4px 20px rgba(74, 52, 28, 0.12);
+  --shadow-cozy-lg: 0 10px 40px rgba(74, 52, 28, 0.18);
+
+  --animate-float: float 5s ease-in-out infinite;
+  --animate-pulse-soft: pulse-soft 2.4s ease-in-out infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-7px);
+    }
+  }
+
+  @keyframes pulse-soft {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.55;
+    }
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-sand-50);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  /* Subtle zellige-inspired lattice over warm parchment. */
+  background-image:
+    radial-gradient(circle at 25% 15%, rgba(42, 157, 143, 0.05), transparent 42%),
+    radial-gradient(circle at 80% 85%, rgba(231, 111, 81, 0.05), transparent 42%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(74, 52, 28, 0.015) 0px,
+      rgba(74, 52, 28, 0.015) 1px,
+      transparent 1px,
+      transparent 18px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(74, 52, 28, 0.015) 0px,
+      rgba(74, 52, 28, 0.015) 1px,
+      transparent 1px,
+      transparent 18px
+    );
+}
+
+::selection {
+  background-color: var(--color-gold-300);
+  color: var(--color-ink);
+}
+
+/* Cozy custom scrollbar. */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--color-sand-300);
+  border-radius: 8px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--color-sand-400);
+}

@@ -1,0 +1,181 @@
+import type { DialogueTree } from "@/types";
+
+export const BIR_JDID_DIALOGUES: DialogueTree[] = [
+  {
+    id: "q-assessment-master-intro",
+    npcId: "mr-tahiri",
+    start: "n1",
+    nodes: {
+      n1: {
+        id: "n1",
+        speaker: "narrator",
+        text: "Bir Jdid. Tractors at dawn, grammar by nine. Mr. Tahiri lays three of Selma's draft quizzes on the table like evidence at a trial.",
+        next: "n2",
+      },
+      n2: {
+        id: "n2",
+        speaker: "mr-tahiri",
+        mood: "stern",
+        text: "Three quizzes. All tidy, all wrong in the same way. Tell me, Selma — before you wrote a single question, did you ask yourself what you were measuring?",
+        next: "n3",
+      },
+      n3: {
+        id: "n3",
+        speaker: "selma",
+        mood: "worried",
+        text: "I... wrote questions about what we studied this week. Isn't that the point?",
+        next: "n4",
+      },
+      n4: {
+        id: "n4",
+        speaker: "mr-tahiri",
+        mood: "neutral",
+        text: "Half the point. Assessment, evaluation, testing — trainees use these like synonyms. They are not. Which one tells you, during the lesson, that the students are lost?",
+        choices: [
+          {
+            id: "c1",
+            text: "Assessment — it's the ongoing check, the thermometer during cooking.",
+            next: "n5",
+            effects: [{ stat: "englishKnowledge", amount: 3 }],
+            relationshipDelta: 8,
+            decisionFlag: "assessment-correct-first",
+          },
+          {
+            id: "c2",
+            text: "Testing — you give them a quick test, surely?",
+            next: "n5b",
+            relationshipDelta: 2,
+            decisionFlag: "assessment-confused-first",
+          },
+        ],
+      },
+      n5: {
+        id: "n5",
+        speaker: "mr-tahiri",
+        mood: "proud",
+        text: "The thermometer during cooking — exactly. Testing is one instrument. Evaluation is the judgment afterwards. Now we sort the whole toolbox, term by term, until it is second nature.",
+        next: null,
+      },
+      n5b: {
+        id: "n5b",
+        speaker: "mr-tahiri",
+        mood: "neutral",
+        text: "A test is an instrument — one of many. Assessment is the ongoing watching, the thermometer in the pot. Evaluation is the judgment at the end. Come — we will sort the whole toolbox until it is second nature.",
+        next: null,
+      },
+    },
+  },
+  {
+    id: "q-assessment-master-outro",
+    npcId: "mr-tahiri",
+    start: "n1",
+    nodes: {
+      n1: {
+        id: "n1",
+        speaker: "mr-tahiri",
+        mood: "proud",
+        text: "Now your quiz measures what you taught, your rubric says what 'good' means, and you know which tool does which job. Take the toolkit. You assembled it — I merely supervised.",
+        next: "n2",
+      },
+      n2: {
+        id: "n2",
+        speaker: "selma",
+        mood: "happy",
+        text: "I'll never look at a quiz the same way. 'But what are you measuring?' is going to echo in my head forever, isn't it?",
+        next: "n3",
+      },
+      n3: {
+        id: "n3",
+        speaker: "mr-tahiri",
+        mood: "happy",
+        text: "That is the plan. It echoes in mine, in my own mentor's voice — thirty years now. Welcome to the chain, Selma.",
+        next: null,
+      },
+    },
+  },
+  {
+    id: "q-didactic-workshop-intro",
+    npcId: "saadia",
+    start: "n1",
+    nodes: {
+      n1: {
+        id: "n1",
+        speaker: "narrator",
+        text: "Workshop day. Trainees from three CRMEF cohorts gather in Bir Jdid to build teaching materials. Across the room, a bright scarf waves like a flag over two saved seats and a glue gun.",
+        next: "n2",
+      },
+      n2: {
+        id: "n2",
+        speaker: "saadia",
+        mood: "happy",
+        text: "Habibti! Over here! I saved you a seat AND the only glue gun that works — I had to tell three people it was 'reserved for medical reasons'. The medical reason is that I missed you.",
+        next: "n3",
+      },
+      n3: {
+        id: "n3",
+        speaker: "khadija",
+        mood: "happy",
+        text: "Focus, team. We need a full materials pack: flashcards, a board game, worksheets. Quality AND deadline. I brought a laminator. Obviously.",
+        next: "n4",
+      },
+      n4: {
+        id: "n4",
+        speaker: "selma",
+        mood: "neutral",
+        text: "Then we need a strategy. How do we split this so it actually gets done?",
+        choices: [
+          {
+            id: "c1",
+            text: "By strengths — Khadija designs, Saadia writes the fun parts, I do pedagogy checks.",
+            next: "n5",
+            effects: [{ stat: "classroomManagement", amount: 2 }],
+            relationshipDelta: 6,
+            decisionFlag: "workshop-split-strengths",
+          },
+          {
+            id: "c2",
+            text: "All together on each item — slower, but everything gets three pairs of eyes.",
+            next: "n5",
+            effects: [{ stat: "teachingSkill", amount: 2 }],
+            relationshipDelta: 4,
+            decisionFlag: "workshop-all-together",
+          },
+        ],
+      },
+      n5: {
+        id: "n5",
+        speaker: "saadia",
+        mood: "happy",
+        text: "Adopted unanimously! Glue gun privileges for everyone. Now let's build things children will actually fight to use — kindly. They will fight kindly. We will put it in the rules.",
+        next: null,
+      },
+    },
+  },
+  {
+    id: "q-didactic-workshop-outro",
+    npcId: "saadia",
+    start: "n1",
+    nodes: {
+      n1: {
+        id: "n1",
+        speaker: "narrator",
+        text: "By sunset the table is covered: laminated flashcards, a snakes-and-ladders grammar game, worksheets with actual jokes in them. The supervising teachers keep 'borrowing' pieces to photograph.",
+        next: "n2",
+      },
+      n2: {
+        id: "n2",
+        speaker: "khadija",
+        mood: "proud",
+        text: "A complete didactic pack. Laminated. Indexed. I'm not crying, there's glue fume in my eye.",
+        next: "n3",
+      },
+      n3: {
+        id: "n3",
+        speaker: "saadia",
+        mood: "happy",
+        text: "Team Safi-Azemmour-Essaouira strikes again! Selma, habibti — two more towns and you're in Casablanca. When the inspector asks who taught you teamwork, describe me accurately: 'tall, magnificent scarf, dangerously good with a glue gun.'",
+        next: null,
+      },
+    },
+  },
+];

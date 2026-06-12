@@ -1,0 +1,182 @@
+import type { DialogueTree } from "@/types";
+
+export const HAD_SOUALEM_DIALOGUES: DialogueTree[] = [
+  {
+    id: "q-school-life-intro",
+    npcId: "souad",
+    start: "n1",
+    nodes: {
+      n1: {
+        id: "n1",
+        speaker: "narrator",
+        text: "Had Soualem — close enough to Casablanca to smell the sea wind and the ambition. The school is preparing its annual Open Day, and somehow Selma is now holding the master checklist.",
+        next: "n2",
+      },
+      n2: {
+        id: "n2",
+        speaker: "souad",
+        mood: "neutral",
+        text: "So you are the trainee organizing Open Day. Good. I am Souad, parents' committee. I have three children in this school and one question: what is your plan?",
+        next: "n3",
+      },
+      n3: {
+        id: "n3",
+        speaker: "selma",
+        mood: "neutral",
+        text: "Morning assembly, English exhibition by the students, parents' Q&A, and a closing chorus. Every student has a role — including the shy ones, especially the shy ones.",
+        next: "n4",
+      },
+      n4: {
+        id: "n4",
+        speaker: "souad",
+        mood: "happy",
+        text: "'Especially the shy ones.' Hm. You may survive this committee yet. And when three things go wrong at once — because they will — what do you do first?",
+        choices: [
+          {
+            id: "c1",
+            text: "Triage: fix whatever affects the students first, everything else waits.",
+            next: "n5",
+            effects: [{ stat: "classroomManagement", amount: 3 }],
+            relationshipDelta: 8,
+            decisionFlag: "openday-students-first",
+          },
+          {
+            id: "c2",
+            text: "Delegate: I'll have a teacher, a parent and a student leader on standby.",
+            next: "n5",
+            effects: [{ stat: "reputation", amount: 2 }],
+            relationshipDelta: 6,
+            decisionFlag: "openday-delegate",
+          },
+        ],
+      },
+      n5: {
+        id: "n5",
+        speaker: "souad",
+        mood: "proud",
+        text: "Correct answer. Both of them, actually. Here is my number — committee mothers solve problems before they exist. Welcome to school life, Selma. It is bigger than the classroom.",
+        next: null,
+      },
+    },
+  },
+  {
+    id: "q-school-life-outro",
+    npcId: "souad",
+    start: "n1",
+    nodes: {
+      n1: {
+        id: "n1",
+        speaker: "narrator",
+        text: "Open Day ends with the closing chorus slightly off-key and entirely wonderful. A shy girl who spoke her first English sentence in public is hugged by approximately nine relatives.",
+        next: "n2",
+      },
+      n2: {
+        id: "n2",
+        speaker: "souad",
+        mood: "proud",
+        text: "The projector died, two parents argued about parking, and a pigeon entered the gymnasium. You handled all three without the students noticing. That is leadership, my dear.",
+        next: "n3",
+      },
+      n3: {
+        id: "n3",
+        speaker: "selma",
+        mood: "happy",
+        text: "The pigeon was a team effort. Souad — thank you. I learned more about teaching today than in some whole weeks of lectures.",
+        next: null,
+      },
+    },
+  },
+  {
+    id: "q-ethics-intro",
+    npcId: "inspector-tazi",
+    start: "n1",
+    nodes: {
+      n1: {
+        id: "n1",
+        speaker: "narrator",
+        text: "A week before Casablanca, word spreads: Inspector Tazi is visiting Had Soualem to lead the professional ethics seminar — the last gate before the Grand Inspection.",
+        next: "n2",
+      },
+      n2: {
+        id: "n2",
+        speaker: "inspector-tazi",
+        mood: "stern",
+        text: "Trainees. Pedagogy can be taught in a year. Judgment takes a career — but it starts today. I will give you dilemmas with no comfortable answers. You will choose anyway. That is the job.",
+        next: "n3",
+      },
+      n3: {
+        id: "n3",
+        speaker: "selma",
+        mood: "worried",
+        text: "No comfortable answers. Wonderful. May I ask, Inspector — is there at least a wrong answer?",
+        next: "n4",
+      },
+      n4: {
+        id: "n4",
+        speaker: "inspector-tazi",
+        mood: "neutral",
+        text: "An excellent question. Yes: the answer you choose to make your own life easier at a student's expense. Every other answer is a debate. Shall we begin?",
+        choices: [
+          {
+            id: "c1",
+            text: "Begin. I'd rather face the hard cases here than improvise them in a real school.",
+            next: "n5",
+            effects: [{ stat: "confidence", amount: 2 }],
+            relationshipDelta: 8,
+            decisionFlag: "ethics-face-directly",
+          },
+          {
+            id: "c2",
+            text: "One more question first: what did YOU answer, your first time?",
+            next: "n5b",
+            effects: [{ stat: "reputation", amount: 2 }],
+            relationshipDelta: 10,
+            decisionFlag: "ethics-asked-inspector",
+          },
+        ],
+      },
+      n5: {
+        id: "n5",
+        speaker: "inspector-tazi",
+        mood: "proud",
+        text: "Spoken like a professional. Take a seat in the front, Miss Selma. The front row is where I put the ones I intend to challenge.",
+        next: null,
+      },
+      n5b: {
+        id: "n5b",
+        speaker: "inspector-tazi",
+        mood: "happy",
+        text: "Ha! Thirty years, and you are the first to ask. I answered wrongly, Miss Selma — and a wise mentor corrected me kindly. That correction is why I do this seminar. Front row, please. You have earned my attention.",
+        next: null,
+      },
+    },
+  },
+  {
+    id: "q-ethics-outro",
+    npcId: "inspector-tazi",
+    start: "n1",
+    nodes: {
+      n1: {
+        id: "n1",
+        speaker: "inspector-tazi",
+        mood: "proud",
+        text: "Fairness over convenience, confidentiality, honesty with parents, protecting the weakest student in the room. Your answers were not perfect — perfection is suspicious — but they were principled.",
+        next: "n2",
+      },
+      n2: {
+        id: "n2",
+        speaker: "selma",
+        mood: "neutral",
+        text: "Some of those dilemmas will keep me up at night, Inspector. I suspect that's the intended effect.",
+        next: "n3",
+      },
+      n3: {
+        id: "n3",
+        speaker: "inspector-tazi",
+        mood: "neutral",
+        text: "It is. A teacher who sleeps too easily worries me. I will see you in Casablanca, Miss Selma — at the Grand Inspection. Bring everything these five towns taught you.",
+        next: null,
+      },
+    },
+  },
+];
