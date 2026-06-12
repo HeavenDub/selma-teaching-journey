@@ -49,6 +49,7 @@ export class WorldScene extends Phaser.Scene {
   private interactKey!: Phaser.Input.Keyboard.Key;
   private spaceKey!: Phaser.Input.Keyboard.Key;
   private pending: PendingFlow | null = null;
+  private interactLockUntil = 0;
   private saveAt = 0;
   private offBus: (() => void) | null = null;
   private offBusCancel: (() => void) | null = null;
@@ -96,7 +97,7 @@ export class WorldScene extends Phaser.Scene {
       Phaser.Input.Keyboard.JustDown(this.spaceKey) ||
       consumeTouchInteract()
     ) {
-      this.interact();
+      if (time >= this.interactLockUntil) this.interact();
     }
     if (consumeTouchPause() && !this.pending) {
       this.pending = { kind: "pause" };
@@ -238,6 +239,15 @@ export class WorldScene extends Phaser.Scene {
       this.player.lockMovement();
       GameEventBus.emit("app:pause-overlay", { open: true });
     });
+    keyboard.on("keydown-H", () => this.openMenuPage("/inventory"));
+    keyboard.on("keydown-J", () => this.openMenuPage("/journal"));
+  }
+
+  /** Jump straight to a menu page (bag, journal) without going through pause. */
+  private openMenuPage(to: string): void {
+    if (this.pending) return;
+    this.persistWorldState();
+    GameEventBus.emit("app:navigate", { to });
   }
 
   private bindDirectorEvents(): void {
@@ -444,6 +454,9 @@ export class WorldScene extends Phaser.Scene {
 
   private clearPending(): void {
     this.pending = null;
+    // Brief lock so the key that closed an overlay (E/Space) cannot
+    // immediately re-trigger the same interaction.
+    this.interactLockUntil = this.time.now + 350;
     this.player.unlockMovement();
     this.updateQuestMarkers();
     this.updatePrompt();

@@ -19,9 +19,9 @@ export function MiniGameFrame({
   children: ReactNode;
 }) {
   return (
-    <div className="mx-auto w-full max-w-3xl">
+    <div className="mx-auto w-full max-w-3xl text-ink">
       <div className="mb-4 rounded-2xl border border-sand-200 bg-white/85 p-5 shadow-cozy">
-        <h2 className="font-display text-2xl font-bold">{title}</h2>
+        <h2 className="font-display text-2xl font-bold text-ink">{title}</h2>
         <p className="mt-1 text-sm text-ink-soft">{instructions}</p>
         {progressValue !== undefined && progressMax !== undefined && (
           <ProgressBar

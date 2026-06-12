@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { GameEventBus } from "./EventBus";
 import {
   queueTouchInteract,
   queueTouchPause,
@@ -85,6 +86,19 @@ export function TouchControls() {
 
       {/* Action buttons — right thumb */}
       <div className="absolute bottom-6 right-4 z-40 flex flex-col items-center gap-3">
+        <button
+          type="button"
+          aria-label="Travel bag"
+          onPointerDown={(e) => {
+            e.preventDefault();
+            GameEventBus.emit("app:navigate", { to: "/inventory" });
+          }}
+          onContextMenu={(e) => e.preventDefault()}
+          className="flex h-12 w-12 items-center justify-center rounded-full border border-white/25 bg-white/15 text-lg text-white/90 backdrop-blur-sm active:bg-white/35"
+          style={{ touchAction: "none", userSelect: "none" }}
+        >
+          🎒
+        </button>
         <button
           type="button"
           aria-label="Pause"

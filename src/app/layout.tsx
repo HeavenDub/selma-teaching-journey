@@ -4,13 +4,13 @@ import "./globals.css";
 
 const display = Quicksand({
   subsets: ["latin"],
-  variable: "--font-display",
+  variable: "--font-quicksand",
   display: "swap",
 });
 
 const body = Nunito({
   subsets: ["latin"],
-  variable: "--font-body",
+  variable: "--font-nunito",
   display: "swap",
 });
 

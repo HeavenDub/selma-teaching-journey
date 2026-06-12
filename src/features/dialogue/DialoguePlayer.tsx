@@ -104,6 +104,25 @@ export function DialoguePlayer({ tree, onComplete }: DialoguePlayerProps) {
     [stats],
   );
 
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.repeat || !node) return;
+      const hasChoices = fullyTyped && !!node.choices && node.choices.length > 0;
+      if (event.key === " " || event.key === "Enter" || event.key.toLowerCase() === "e") {
+        event.preventDefault();
+        if (!hasChoices) advance();
+        return;
+      }
+      if (hasChoices) {
+        const num = Number.parseInt(event.key, 10);
+        const choice = node.choices![num - 1];
+        if (choice && !choiceLocked(choice)) pickChoice(choice);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [node, fullyTyped, advance, pickChoice, choiceLocked]);
+
   if (!node) {
     onComplete();
     return null;
@@ -114,9 +133,9 @@ export function DialoguePlayer({ tree, onComplete }: DialoguePlayerProps) {
   const showChoices = fullyTyped && node.choices && node.choices.length > 0;
 
   return (
-    <div className="mx-auto flex w-full max-w-3xl flex-col gap-4">
+    <div className="mx-auto flex w-full max-w-3xl flex-col gap-4 text-ink">
       <div
-        className="min-h-[16rem] cursor-pointer select-none rounded-2xl border border-sand-200 bg-white/85 p-6 shadow-cozy backdrop-blur"
+        className="min-h-64 cursor-pointer select-none rounded-2xl border border-sand-200 bg-white/85 p-6 shadow-cozy backdrop-blur"
         onClick={advance}
         role="button"
         aria-label="Advance dialogue"
@@ -132,7 +151,7 @@ export function DialoguePlayer({ tree, onComplete }: DialoguePlayerProps) {
             <div className="mb-4 flex items-center gap-3">
               <Portrait emoji={speaker.emoji} background={speaker.background} size="md" />
               <div>
-                <span className="block font-display text-lg font-bold">
+                <span className="block font-display text-lg font-bold text-ink">
                   {speaker.name}{" "}
                   {node.mood && node.mood !== "neutral" && (
                     <span className="text-base">{MOOD_EMOJI[node.mood]}</span>
@@ -162,7 +181,7 @@ export function DialoguePlayer({ tree, onComplete }: DialoguePlayerProps) {
             animate={{ opacity: [0.4, 1, 0.4] }}
             transition={{ repeat: Infinity, duration: 1.8 }}
           >
-            Click to continue ▸
+            Space / click to continue ▸
           </motion.div>
         )}
       </div>
@@ -192,7 +211,7 @@ export function DialoguePlayer({ tree, onComplete }: DialoguePlayerProps) {
                       : "cursor-pointer border-sand-300 bg-white/90 text-ink hover:border-zellige-500 hover:bg-zellige-500/5"
                   }`}
                 >
-                  <span className="mr-2 font-bold text-zellige-700">▸</span>
+                  <span className="mr-2 font-bold text-zellige-700">{idx + 1}.</span>
                   {choice.text}
                   {choice.requirement && (
                     <span className="ml-2 text-xs font-bold text-terra-500">

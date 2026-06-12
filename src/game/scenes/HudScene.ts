@@ -60,6 +60,19 @@ export class HudScene extends Phaser.Scene {
       .setOrigin(0.5)
       .setScrollFactor(0)
       .setDepth(3);
+
+    // Always-visible key guide so players never have to dig through pause.
+    this.add
+      .text(18, 708, "E Talk/Act   H Bag   J Journal   Esc Pause", {
+        fontFamily: "Arial, sans-serif",
+        fontSize: "14px",
+        color: "#f8f4ea",
+        backgroundColor: "rgba(31, 29, 43, 0.72)",
+        padding: { x: 10, y: 6 },
+      })
+      .setOrigin(0, 1)
+      .setScrollFactor(0)
+      .setDepth(3);
   }
 
   update(): void {

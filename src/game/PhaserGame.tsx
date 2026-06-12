@@ -194,7 +194,7 @@ export default function PhaserGame() {
       )}
 
       {dialogue && (
-        <Overlay>
+        <Overlay align="bottom">
           <DialoguePlayer
             key={dialogue.treeId}
             tree={getDialogue(dialogue.treeId)}
@@ -318,8 +318,11 @@ export default function PhaserGame() {
               <Button size="lg" variant="secondary" onClick={manualSave}>
                 Save to Slot 1
               </Button>
+              <Button size="lg" variant="ghost" onClick={() => router.push("/inventory")}>
+                🎒 Travel Bag <span className="ml-1 text-xs text-ink-soft">(H)</span>
+              </Button>
               <Button size="lg" variant="ghost" onClick={() => router.push("/journal")}>
-                Journal, Bag & Stats
+                📓 Journal & Stats <span className="ml-1 text-xs text-ink-soft">(J)</span>
               </Button>
               <Button size="lg" variant="ghost" onClick={() => router.push("/settings")}>
                 Settings
@@ -339,10 +342,17 @@ export default function PhaserGame() {
 function Overlay({
   children,
   wide = false,
-}: Readonly<{ children: React.ReactNode; wide?: boolean }>) {
+  align = "center",
+}: Readonly<{ children: React.ReactNode; wide?: boolean; align?: "center" | "bottom" }>) {
   return (
-    <div className="absolute inset-0 z-50 flex items-center justify-center overflow-y-auto bg-[#1f1d2b]/70 px-4 py-8 backdrop-blur-sm">
-      <div className={wide ? "w-full max-w-5xl" : "w-full max-w-3xl"}>{children}</div>
+    <div className="absolute inset-0 z-50 flex overflow-y-auto bg-[#1f1d2b]/70 px-4 py-6 backdrop-blur-sm">
+      <div
+        className={`mx-auto w-full text-ink ${align === "bottom" ? "mt-auto" : "my-auto"} ${
+          wide ? "max-w-5xl" : "max-w-3xl"
+        }`}
+      >
+        {children}
+      </div>
     </div>
   );
 }
