@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import type { FinalInspectionConfig, MiniGameResult } from "@/types";
 import { audioManager } from "@/lib/audio/audioManager";
@@ -22,12 +22,11 @@ export function FinalInspectionGame({ config, onComplete }: Props) {
   const [sectionResults, setSectionResults] = useState<number[]>([]);
   const [betweenSections, setBetweenSections] = useState(false);
 
-  const optionOrders = useMemo(
-    () =>
-      config.sections.map((s) =>
-        s.questions.map((q) => shuffle(q.options.map((_, i) => i))),
-      ),
-    [config],
+  // Shuffle once per mount so re-renders never reorder the options.
+  const [optionOrders] = useState(() =>
+    config.sections.map((s) =>
+      s.questions.map((q) => shuffle(q.options.map((_, i) => i))),
+    ),
   );
 
   const section = config.sections[sectionIndex];

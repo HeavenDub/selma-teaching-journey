@@ -45,12 +45,12 @@ export const CHAT_DIALOGUES: DialogueTree[] = [
   },
   {
     id: "chat-dr-bennani",
-    npcId: "dr-benhadouch",
+    npcId: "dr-benhaddouche",
     start: "n1",
     nodes: {
       n1: {
         id: "n1",
-        speaker: "dr-benhadouch",
+        speaker: "dr-benhaddouche",
         mood: "neutral",
         text: "Miss Selma. I have four reports to annotate, so you have four minutes. Use them well.",
         choices: [
@@ -70,14 +70,14 @@ export const CHAT_DIALOGUES: DialogueTree[] = [
       },
       n2: {
         id: "n2",
-        speaker: "dr-benhadouch",
+        speaker: "dr-benhaddouche",
         mood: "neutral",
         text: "Evidence of looking at learners, not at the teacher. Weak trainees describe the show. Strong ones describe the learning. You have three minutes left — go practice.",
         next: null,
       },
       n3: {
         id: "n3",
-        speaker: "dr-benhadouch",
+        speaker: "dr-benhaddouche",
         mood: "happy",
         text: "Twice, minimum. The first read tells me what you did. The second tells me who you are becoming. Both matter to me more than you suspect.",
         next: null,
@@ -226,7 +226,7 @@ export const CHAT_DIALOGUES: DialogueTree[] = [
           },
           {
             id: "c2",
-            text: "Ask me again after we survive Dr. Benhadouch's review.",
+            text: "Ask me again after we survive Dr. Benhaddouche's review.",
             next: "n3",
             relationshipDelta: 4,
           },

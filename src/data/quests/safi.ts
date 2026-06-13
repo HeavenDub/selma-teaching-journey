@@ -140,10 +140,10 @@ export const SAFI_QUESTS: QuestDefinition[] = [
     title: "Micro-Teaching Anxiety",
     category: "crmef-activity",
     difficulty: 2,
-    summary: "Survive — no, master — ten minutes of teaching in front of your peers and Dr. Benhadouch.",
+    summary: "Survive — no, master — ten minutes of teaching in front of your peers and Dr. Benhaddouche.",
     prerequisites: ["after-school-activities"],
     story:
-      "The gauntlet. Ten minutes, a lesson of her own design, her fellow trainees as students, and Dr. Benhadouch at the back with the famous notes. Every trainee fears micro-teaching; the wise ones prepare for it choice by choice.",
+      "The gauntlet. Ten minutes, a lesson of her own design, her fellow trainees as students, and Dr. Benhaddouche at the back with the famous notes. Every trainee fears micro-teaching; the wise ones prepare for it choice by choice.",
     objectives: [
       { id: "o1", description: "Prepare a ten-minute micro-lesson" },
       { id: "o2", description: "Choose effective teaching methods under pressure" },
@@ -178,7 +178,7 @@ export const SAFI_QUESTS: QuestDefinition[] = [
             {
               moment: "Minute 5. Saadia, playing a difficult student, loudly asks: 'Teacher, why do we even need English?'",
               options: [
-                { text: "Take it seriously for twenty seconds — connect English to her own stated dreams — then return to the lesson.", quality: 2, feedback: "You honored the question without surrendering the lesson. Dr. Benhadouch's pen moves approvingly." },
+                { text: "Take it seriously for twenty seconds — connect English to her own stated dreams — then return to the lesson.", quality: 2, feedback: "You honored the question without surrendering the lesson. Dr. Benhaddouche's pen moves approvingly." },
                 { text: "Say 'good question!' and ignore it.", quality: 1, feedback: "Half a response. The class noticed the dodge." },
                 { text: "Tell her that's not relevant right now.", quality: 0, feedback: "Technically true, pedagogically expensive. The room cools." },
               ],
@@ -192,7 +192,7 @@ export const SAFI_QUESTS: QuestDefinition[] = [
               ],
             },
             {
-              moment: "Minute 10. Done. Dr. Benhadouch asks, in front of everyone: 'What would you change if you taught it again?'",
+              moment: "Minute 10. Done. Dr. Benhaddouche asks, in front of everyone: 'What would you change if you taught it again?'",
               options: [
                 { text: "Name one specific weakness and exactly how you'd fix it.", quality: 2, feedback: "Self-aware, specific, unafraid. This is the answer she gives full marks to." },
                 { text: "Say it went mostly as planned.", quality: 0, feedback: "Every lesson has a flaw. Claiming otherwise says you didn't look." },
@@ -213,9 +213,9 @@ export const SAFI_QUESTS: QuestDefinition[] = [
     },
     journal: {
       highScore:
-        "Micro-teaching is done and I am still alive — more alive than before, somehow. Around minute six I forgot to be terrified. Dr. Benhadouch said it was 'teaching, not surviving.' Saadia cheered so loudly the eyebrow came out. Safi gave me my legs. Time to walk north.",
+        "Micro-teaching is done and I am still alive — more alive than before, somehow. Around minute six I forgot to be terrified. Dr. Benhaddouche said it was 'teaching, not surviving.' Saadia cheered so loudly the eyebrow came out. Safi gave me my legs. Time to walk north.",
       lowScore:
-        "Micro-teaching is done. It was rough in places — silences, a rushed ending, my heart in my ears throughout. But Dr. Benhadouch told me something I'm writing down so I never lose it: he expects intention, not perfection. Next time, every minute will be chosen. Safi taught me to stand. El Jadida will teach me to walk.",
+        "Micro-teaching is done. It was rough in places — silences, a rushed ending, my heart in my ears throughout. But Dr. Benhaddouche told me something I'm writing down so I never lose it: he expects intention, not perfection. Next time, every minute will be chosen. Safi taught me to stand. El Jadida will teach me to walk.",
     },
   },
 ];

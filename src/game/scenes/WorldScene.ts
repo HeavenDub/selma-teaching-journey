@@ -472,6 +472,10 @@ export class WorldScene extends Phaser.Scene {
   }
 
   private cleanup(): void {
+    // Phaser reuses the scene instance across restarts (doors, bus travel),
+    // so stale flow state must be reset or E/interactions stay blocked.
+    this.pending = null;
+    this.interactLockUntil = 0;
     this.offBus?.();
     this.offBusCancel?.();
     this.offDialogue?.();

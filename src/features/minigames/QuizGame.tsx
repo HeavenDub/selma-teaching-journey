@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import type { MiniGameResult, QuizQuestion } from "@/types";
 import { audioManager } from "@/lib/audio/audioManager";
@@ -21,9 +21,9 @@ export function QuizGame({ title, instructions, questions, onComplete }: QuizGam
   const [correctCount, setCorrectCount] = useState(0);
 
   const question = questions[index];
-  const shuffledOrder = useMemo(
-    () => questions.map((q) => shuffle(q.options.map((_, i) => i))),
-    [questions],
+  // Shuffle once per mount so re-renders never reorder the options.
+  const [shuffledOrder] = useState(() =>
+    questions.map((q) => shuffle(q.options.map((_, i) => i))),
   );
 
   if (!question) return null;

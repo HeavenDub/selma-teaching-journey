@@ -17,16 +17,16 @@ export const NPCS: NpcDefinition[] = [
     ],
   },
   {
-    id: "dr-benhadouch",
-    name: "Dr. Benhadouch",
+    id: "dr-benhaddouche",
+    name: "Dr. Benhaddouche",
     role: "crmef-supervisor",
     cityId: "safi",
     portrait: { emoji: "👨🏽‍🦳", background: "#9d4f88" },
     biography:
-      "The old lion of CRMEF Safi. White-haired, slow-walking, forty years of pedagogy in one cardigan, Dr. Benhadouch reads every observation sheet twice and has outlasted six reforms, four ministers and one earthquake. He is demanding because he has watched too many half-prepared teachers sink — and he refuses to launch another one.",
+      "The old lion of CRMEF Safi. White-haired, slow-walking, forty years of pedagogy in one cardigan, Dr. Benhaddouche reads every observation sheet twice and has outlasted six reforms, four ministers and one earthquake. He is demanding because he has watched too many half-prepared teachers sink — and he refuses to launch another one.",
     chatDialogueId: "chat-dr-bennani",
     storyArc: [
-      { minRelationship: 0, text: "Dr. Benhadouch's red pen is famous among trainees. So is his habit of being right." },
+      { minRelationship: 0, text: "Dr. Benhaddouche's red pen is famous among trainees. So is his habit of being right." },
       { minRelationship: 30, text: "He mentions, between two corrections, that he wrote his doctoral thesis on teacher resilience in rural Morocco — by lamplight, in 1986." },
       { minRelationship: 60, text: "He tells Selma: 'I push hardest the ones I believe in. At my age, I do not waste ink on the others.' The red pen suddenly looks different." },
     ],

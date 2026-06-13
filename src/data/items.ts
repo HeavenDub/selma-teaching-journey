@@ -110,7 +110,7 @@ export const ITEMS: ItemDefinition[] = [
     id: "methodology-handbook",
     name: "ELT Methodology Handbook",
     description:
-      "A dog-eared reference book covering PPP, TBL and CLT approaches, gifted by supervisor Dr. Benhadouch.",
+      "A dog-eared reference book covering PPP, TBL and CLT approaches, gifted by supervisor Dr. Benhaddouche.",
     rarity: "rare",
     category: "reference-book",
     icon: "📚",

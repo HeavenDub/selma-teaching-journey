@@ -211,7 +211,7 @@ export const CASABLANCA_QUESTS: QuestDefinition[] = [
                     "Only the problems, for maximum usefulness",
                   ],
                   correctIndex: 0,
-                  explanation: "Weak observers describe the show; strong ones describe the learning. Dr. Benhadouch's first read and second.",
+                  explanation: "Weak observers describe the show; strong ones describe the learning. Dr. Benhaddouche's first read and second.",
                 },
               ],
             },

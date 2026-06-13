@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import type { AssessmentDesignConfig, MiniGameResult } from "@/types";
 import { audioManager } from "@/lib/audio/audioManager";
@@ -21,7 +21,8 @@ const BUCKETS = [
 
 /** Sort each concept card into Assessment / Evaluation / Testing. */
 export function AssessmentDesignGame({ config, onComplete }: Props) {
-  const items = useMemo(() => shuffle(config.items), [config]);
+  // Shuffle once per mount so re-renders never reorder the cards.
+  const [items] = useState(() => shuffle(config.items));
   const [index, setIndex] = useState(0);
   const [correct, setCorrect] = useState(0);
   const [lastResult, setLastResult] = useState<{ good: boolean; bucket: string } | null>(null);

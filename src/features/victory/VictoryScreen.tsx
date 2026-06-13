@@ -202,7 +202,7 @@ export function VictoryScreen() {
                 <CreditBlock title="Created By">Your Dear Husband ♥</CreditBlock>
                 <CreditBlock title="Starring">Selma — Teacher Trainee Extraordinaire</CreditBlock>
                 <CreditBlock title="The Mentors">
-                  Mr. Alaoui · Dr. Benhadouch · Mr. Tahiri
+                  Mr. Alaoui · Dr. Benhaddouche · Mr. Tahiri
                 </CreditBlock>
                 <CreditBlock title="The Friends">
                   Saadia (and her magnificent scarf) · Khadija (and her seventeen highlighters)

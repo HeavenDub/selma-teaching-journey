@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { LessonSequenceConfig, MiniGameResult } from "@/types";
 import { audioManager } from "@/lib/audio/audioManager";
@@ -15,7 +15,8 @@ interface Props {
 
 /** Click stages in the correct pedagogical order. Mistakes cost score. */
 export function LessonSequenceGame({ config, onComplete }: Props) {
-  const stages = useMemo(() => shuffle(config.correctOrder), [config]);
+  // Shuffle once per mount so re-renders never reorder the stages.
+  const [stages] = useState(() => shuffle(config.correctOrder));
   const [placed, setPlaced] = useState<string[]>([]);
   const [mistakes, setMistakes] = useState(0);
   const [shakeId, setShakeId] = useState<string | null>(null);

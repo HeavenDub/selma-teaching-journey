@@ -43,7 +43,7 @@ export const NPC_PALETTES: Record<string, CharacterPalette> = {
     top: "#2a9d8f", topShadow: "#1d6e64", bottom: "#3d3a45",
     shoes: "#262430", accessory: "#caa468",
   },
-  "dr-benhadouch": {
+  "dr-benhaddouche": {
     skin: "#c89868", hair: "#e8e3da", hairShadow: "#b8b2a6",
     top: "#7d5a74", topShadow: "#5e4358", bottom: "#4a4550",
     shoes: "#2c2733", accessory: "#e3d3b5",

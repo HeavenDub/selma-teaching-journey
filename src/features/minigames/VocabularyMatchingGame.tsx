@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import type { MiniGameResult, VocabularyMatchingConfig } from "@/types";
 import { audioManager } from "@/lib/audio/audioManager";
@@ -15,8 +15,9 @@ interface Props {
 
 /** Match each word to its picture; wrong attempts cost score. */
 export function VocabularyMatchingGame({ config, onComplete }: Props) {
-  const words = useMemo(() => shuffle(config.pairs.map((p) => p.word)), [config]);
-  const emojis = useMemo(() => shuffle(config.pairs), [config]);
+  // Shuffle once per mount so re-renders never reorder the boards.
+  const [words] = useState(() => shuffle(config.pairs.map((p) => p.word)));
+  const [emojis] = useState(() => shuffle(config.pairs));
   const [selectedWord, setSelectedWord] = useState<string | null>(null);
   const [matched, setMatched] = useState<Set<string>>(new Set());
   const [wrongAttempts, setWrongAttempts] = useState(0);

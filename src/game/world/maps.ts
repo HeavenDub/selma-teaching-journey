@@ -72,7 +72,7 @@ function crmefSafi(): WorldMapDef {
     grid: b.rows(),
     spawn: { tx: 11, ty: 11 },
     doors: [{ tx: 11, ty: 12, label: "Back to Safi", target: { mapId: "safi-town", tx: 12, ty: 6 } }],
-    npcs: [{ npcId: "dr-benhadouch", tx: 10, ty: 3, facing: "down" }],
+    npcs: [{ npcId: "dr-benhaddouche", tx: 10, ty: 3, facing: "down" }],
     students: [
       { tx: 5, ty: 5, variant: 0 },
       { tx: 9, ty: 5, variant: 1 },
@@ -462,7 +462,7 @@ export function townMapForCity(cityId: string): WorldMapDef {
 export const QUEST_GIVERS: Record<string, { npcId: string; mapId?: string }> = {
   "first-observation": { npcId: "mr-alaoui" },
   "after-school-activities": { npcId: "mr-alaoui" },
-  "micro-teaching": { npcId: "dr-benhadouch" },
+  "micro-teaching": { npcId: "dr-benhaddouche" },
   "glass-of-milk": { npcId: "mrs-fassi" },
   "weather-forecast": { npcId: "amine" },
   "portfolio-challenge": { npcId: "khadija", mapId: "azemmour-archive" },

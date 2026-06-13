@@ -202,12 +202,12 @@ export const SAFI_DIALOGUES: DialogueTree[] = [
   },
   {
     id: "q-micro-teaching-intro",
-    npcId: "dr-benhadouch",
+    npcId: "dr-benhaddouche",
     start: "n1",
     nodes: {
       n1: {
         id: "n1",
-        speaker: "dr-benhadouch",
+        speaker: "dr-benhaddouche",
         mood: "stern",
         text: "Tomorrow, micro-teaching. Ten minutes, your peers as students, me at the back with my notes. Some trainees call it 'the gauntlet'. They are being dramatic. Slightly.",
         next: "n2",
@@ -216,7 +216,7 @@ export const SAFI_DIALOGUES: DialogueTree[] = [
         id: "n2",
         speaker: "selma",
         mood: "worried",
-        text: "Ten minutes in front of everyone. Dr. Benhadouch, what if my mind goes completely blank?",
+        text: "Ten minutes in front of everyone. Dr. Benhaddouche, what if my mind goes completely blank?",
         next: "n3",
       },
       n3: {
@@ -228,7 +228,7 @@ export const SAFI_DIALOGUES: DialogueTree[] = [
       },
       n4: {
         id: "n4",
-        speaker: "dr-benhadouch",
+        speaker: "dr-benhaddouche",
         mood: "neutral",
         text: "Or, instead of Miss Saadia's scarf method: prepare your opening line so well you could say it asleep. The first sentence carries you to the second. How will you prepare tonight?",
         choices: [
@@ -260,7 +260,7 @@ export const SAFI_DIALOGUES: DialogueTree[] = [
       },
       n5: {
         id: "n5",
-        speaker: "dr-benhadouch",
+        speaker: "dr-benhaddouche",
         mood: "proud",
         text: "A plan. Good. Remember: nobody expects perfection from a trainee. I expect intention. Show me you chose every minute of those ten minutes.",
         next: null,
@@ -269,18 +269,18 @@ export const SAFI_DIALOGUES: DialogueTree[] = [
   },
   {
     id: "q-micro-teaching-outro",
-    npcId: "dr-benhadouch",
+    npcId: "dr-benhaddouche",
     start: "n1",
     nodes: {
       n1: {
         id: "n1",
         speaker: "narrator",
-        text: "Ten minutes pass like one. When Selma puts down the marker, her peers applaud — and Saadia cheers 'THAT'S MY FRIEND!' until Dr. Benhadouch's eyebrow gently lowers the volume.",
+        text: "Ten minutes pass like one. When Selma puts down the marker, her peers applaud — and Saadia cheers 'THAT'S MY FRIEND!' until Dr. Benhaddouche's eyebrow gently lowers the volume.",
         next: "n2",
       },
       n2: {
         id: "n2",
-        speaker: "dr-benhadouch",
+        speaker: "dr-benhaddouche",
         mood: "proud",
         text: "Notes: clear objective, natural transitions, voice steady after minute two. Selma — that was teaching, not surviving. There is a difference, and today you crossed it.",
         next: "n3",

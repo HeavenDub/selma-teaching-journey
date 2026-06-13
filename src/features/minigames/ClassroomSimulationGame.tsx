@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import type { ClassroomSimulationConfig, MiniGameResult } from "@/types";
 import { audioManager } from "@/lib/audio/audioManager";
@@ -20,9 +20,9 @@ export function ClassroomSimulationGame({ config, onComplete }: Props) {
   const [order, setOrder] = useState(60);
   const [picked, setPicked] = useState<number | null>(null);
 
-  const shuffled = useMemo(
-    () => config.events.map((e) => shuffle(e.options.map((_, i) => i))),
-    [config],
+  // Shuffle once per mount so re-renders never reorder the options.
+  const [shuffled] = useState(() =>
+    config.events.map((e) => shuffle(e.options.map((_, i) => i))),
   );
 
   const event = config.events[index];

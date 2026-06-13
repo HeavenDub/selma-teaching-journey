@@ -7,9 +7,9 @@ export const AZEMMOUR_QUESTS: QuestDefinition[] = [
     title: "The Portfolio Challenge",
     category: "portfolio-task",
     difficulty: 3,
-    summary: "Write the internship reports — and choose reflections worthy of Dr. Benhadouch's double reading.",
+    summary: "Write the internship reports — and choose reflections worthy of Dr. Benhaddouche's double reading.",
     story:
-      "Portfolio season descends on Azemmour like river fog. With Khadija drowning in drafts beside her, Selma must assemble her internship report: not what happened, but what it meant. Dr. Benhadouch reads everything twice. The portfolio must survive both readings.",
+      "Portfolio season descends on Azemmour like river fog. With Khadija drowning in drafts beside her, Selma must assemble her internship report: not what happened, but what it meant. Dr. Benhaddouche reads everything twice. The portfolio must survive both readings.",
     objectives: [
       { id: "o1", description: "Draft reflections on the internship so far" },
       { id: "o2", description: "Select the strongest observations for the portfolio" },
@@ -31,7 +31,7 @@ export const AZEMMOUR_QUESTS: QuestDefinition[] = [
                 {
                   text: "I recorded the strategies I saw and, more importantly, what each one did to the learners' attention. I now watch students to evaluate teaching, not the teacher.",
                   quality: 2,
-                  feedback: "Learner-focused evidence — the exact thing Dr. Benhadouch reads for.",
+                  feedback: "Learner-focused evidence — the exact thing Dr. Benhaddouche reads for.",
                 },
                 {
                   text: "The lesson was excellent and very well managed. I learned a lot from this valuable experience.",
@@ -120,7 +120,7 @@ export const AZEMMOUR_QUESTS: QuestDefinition[] = [
     },
     journal: {
       highScore:
-        "Portfolio submitted. I wrote about my failures on purpose — the collapsed timing, the early panic — and Dr. Benhadouch wrote 'finally, a trainee who watches herself teach' in the margin. Khadija and I celebrated by the river with orange juice and exactly one highlighter. Honesty, it turns out, is a genre.",
+        "Portfolio submitted. I wrote about my failures on purpose — the collapsed timing, the early panic — and Dr. Benhaddouche wrote 'finally, a trainee who watches herself teach' in the margin. Khadija and I celebrated by the river with orange juice and exactly one highlighter. Honesty, it turns out, is a genre.",
       lowScore:
         "Portfolio submitted, barely. Too many of my reflections came back with the red pen's favorite word: 'evidence?' I wrote what sounded professional instead of what was true. Khadija — buried in her own binders — said something wise: 'The portfolio isn't about the internship. It's about whether you were paying attention to yourself.' Next entry, I will be.",
     },

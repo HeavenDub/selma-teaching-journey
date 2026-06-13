@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import type { MiniGameResult } from "@/types";
 import { audioManager } from "@/lib/audio/audioManager";
@@ -36,9 +36,10 @@ export function ScenarioGame({
   const [picked, setPicked] = useState<number | null>(null);
   const [totalQuality, setTotalQuality] = useState(0);
 
-  const shuffledOptions = useMemo(
-    () => rounds.map((r) => shuffle(r.options.map((_, i) => i))),
-    [rounds],
+  // Shuffle once per mount: parents rebuild the rounds array on re-render,
+  // so a memo keyed on it would reshuffle mid-game.
+  const [shuffledOptions] = useState(() =>
+    rounds.map((r) => shuffle(r.options.map((_, i) => i))),
   );
 
   const round = rounds[index];

@@ -16,7 +16,7 @@ export const AZEMMOUR_DIALOGUES: DialogueTree[] = [
         id: "n2",
         speaker: "khadija",
         mood: "worried",
-        text: "Selma! Thank goodness. Portfolio season. Internship reports are due and Dr. Benhadouch reads EVERYTHING. Twice. I've drafted nine reflections and I hate eleven of them.",
+        text: "Selma! Thank goodness. Portfolio season. Internship reports are due and Dr. Benhaddouche reads EVERYTHING. Twice. I've drafted nine reflections and I hate eleven of them.",
         next: "n3",
       },
       n3: {
@@ -68,7 +68,7 @@ export const AZEMMOUR_DIALOGUES: DialogueTree[] = [
         id: "n1",
         speaker: "khadija",
         mood: "happy",
-        text: "Submitted! Both portfolios. Selma, your reflection on the milk lesson — where you admitted the timing collapsed in production stage? Dr. Benhadouch wrote 'finally, a trainee who watches herself teach' on it.",
+        text: "Submitted! Both portfolios. Selma, your reflection on the milk lesson — where you admitted the timing collapsed in production stage? Dr. Benhaddouche wrote 'finally, a trainee who watches herself teach' on it.",
         next: "n2",
       },
       n2: {
